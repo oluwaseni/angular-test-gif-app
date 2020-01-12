@@ -1,19 +1,37 @@
 
 <div class="row">
+
     <div class="col-md-12">
         <form class="form-horizontal">
             <div class="form-group">
                 <div class="col-md-10">
                     <input type="text"
+                            [(ngModel)]='searchTerm' 
+                            (ngChange)="searchChanged($event)"
                            name="giphy-search"
                            class="form-control"
                            placeholder="type your search here"
                     />
                 </div>
                 <div class="col-md-2">
-                    <button type="submit" class="btn btn-default pull-right">Search</button>
+                    <button (click)="changes()" class="btn btn-default pull-right">Search</button>
                 </div>
             </div>
         </form>
     </div>
+
+   
 </div>
+
+
+<!-- 
+<div style="background-color: blue !important; height: 70px; color: chartreuse;">
+    <div class="row" *ngFor="let gif of res">
+        <img [src]="gif.images.downsized.url" alt="gif.slug">
+        {{gif.slug}}
+    </div> -->
+{{message}}
+    <!-- <app-results-list [message]="message"></app-results-list> -->
+<!-- </div> -->
+
+<app-results-list></app-results-list>

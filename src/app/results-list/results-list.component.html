@@ -1,4 +1,22 @@
 <div>
     <!-- Implement result list here -->
-    Results List
+    <!-- Results List -->
+
+    <!-- {{message}}000000 -->
+
+    <div *ngIf="result" class="row" style="height: 300px !important;">
+        <div class="card col-sm-4" 
+                (click)="giphy(gif.id)"
+                style="position:relative; background-color: #cccccc; height: 300px !important; cursor: pointer;" 
+                *ngFor="let gif of result"
+                >
+            <img [src]="gif.images.downsized.url" 
+                    alt="gif.slug" 
+                    height="80%" width="100%">
+            <div class="card-body">
+                <h5 class="card-title">{{gif.title}}</h5>
+                <h5 class="card-title">{{message}}</h5>
+            </div>
+        </div>
+    </div>
 </div>
