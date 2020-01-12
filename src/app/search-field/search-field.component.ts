@@ -19,16 +19,11 @@ export class SearchFieldComponent implements OnInit {
     constructor(private _service:SearchService) {
     }
 
-    // message = this.searchTerm
 
     ngOnInit() {
 
         this._service.currentMessage.subscribe(message => this.message = message)
     }
-
-    // such(){
-    //     this.message = this.searchTerm
-    // }
 
     changes(){
         this._service.changeMessage(this.searchTerm)

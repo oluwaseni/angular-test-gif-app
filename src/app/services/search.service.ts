@@ -13,7 +13,6 @@ export class SearchService {
 
 
   URL = 'https://api.giphy.com/v1/gifs/search'
-  ru = 'https://api.giphy.com/v1/gifs/search'
 
   url = 'https://api.giphy.com/v1/gifs';
   apiKey = '6BlOJj8efv4EyplYtbV1Sv4xuHR8jJJi';
@@ -36,25 +35,14 @@ export class SearchService {
     return this._http.get(`${this.URL}?&api_key=${this.apiKey}&q=${encodeURI(title)}`)
 
   }
-  // xT4uQulxzV39haRFjG
-  newId
-  getDetails(id:any): Observable<any>{
-    this.newId = ++id
-    console.log(this.newId)
+  
+  getDetails(id){
+    console.log(id)
     return this._http.get(`${this.url}/${++id}?&api_key=${this.apiKey}`)
     // return this._http.get(`${this.url}${id}?&apikey=${this.apiKey}`)
    
   }
 
-  getDetail(id): Observable<any> {
-    console.log(id)
-    const rl = `${this.url}/${id}?&api_key=${this.apiKey}`;
-    // return this._http.get(`${this.url}/${id}?&api_key=${this.apiKey}`)
 
-    return this._http.get<any>(rl).pipe(
-      tap(_ => console.log(`fetched hero id=${id}`)),
-      // catchError(console.log(`getHero id=${id}`))
-    );
-  }
   
 }
